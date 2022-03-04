@@ -1,0 +1,147 @@
+@for $i from 0 through 6 {
+  .marr_#{$i} {
+      margin-right: #{$i*0.5}rem !important;
+  }
+
+  .marl_#{$i} {
+      margin-left: #{$i*0.5}rem !important;
+  }
+
+  .mart_#{$i} {
+      margin-top: #{$i*0.5}rem !important;
+  }
+
+  .marb_#{$i} {
+      margin-bottom: #{$i*0.5}rem !important;
+  }
+
+  .mar_#{$i} {
+      margin: #{$i*0.5}rem !important;
+  }
+
+  .padr_#{$i} {
+      padding-right: #{$i*0.5}rem !important;
+  }
+
+  .padl_#{$i} {
+      padding-left: #{$i*0.5}rem !important;
+  }  
+  
+  .padt_#{$i} {
+      padding-top: #{$i*0.5}rem !important;
+  }  
+  
+  .padb_#{$i} {
+      padding-bottom: #{$i*0.5}rem !important;
+  }
+  
+  .pad_#{$i} {
+      padding: #{$i*0.5}rem !important;
+  }
+
+  .flex#{$i} {
+      flex: $i !important;
+  }
+}
+
+@mixin square($s) {
+  width: $s;
+  height: $s;
+}
+
+.none {
+  display: none;
+}
+
+.iblock {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.middle {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.po_center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.por {
+  position: relative;
+}
+
+.margin_center {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+.height100 {
+  height: 100%;
+}
+
+.heightauto {
+  height: auto !important;
+}
+
+.width100 {
+  width: 100%;
+}
+.width70 {
+width: 70%
+}
+.width50 {
+  width: 50%
+}
+
+
+
+.cp {
+  cursor: pointer;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.v-hidden {
+  visibility: hidden;
+}
+
+/* text */
+.text-center {
+text-align: center;
+}
+
+.text-left {
+text-align: left;
+}
+
+.text-right {
+text-align: right;
+}
+
+
+/* flex */
+
+.flex {display: flex;}
+.fww {flex-wrap: wrap;}
+.jcc {justify-content: center;}
+.jcsb {justify-content: space-between;}
+.jcsa {justify-content: space-around;}
+.jcs {justify-content: start;}
+.jcfn {justify-content: flex-end;}
+.aic {align-items: center;}
+.aifn {align-items: flex-end;}
+.acsb {align-content: space-around;}
+.acfs {align-content: flex-start;}
+.acfe {align-content: flex-end;}
+.fdi {flex-direction: initial;}
+.fdc {flex-direction: column;}

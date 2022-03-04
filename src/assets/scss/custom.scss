@@ -1,0 +1,484 @@
+@import "./default/variables";
+//===== Colors =====//
+$theme-color: #00f936;
+$white:#fff;
+$heading-color: #1f1f25;
+$orange: #f15a29;
+
+* {
+  transition: all .3s !important;
+}
+//===== Colors =====//
+.card {
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgb(122, 122, 122);
+}
+
+//====== Login =====//
+#login_nest_bg {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/pexels.jpg');
+    background-size: cover;
+    opacity: .8;
+    filter: blur(2px);
+    background-color: transparent;
+  }
+}
+
+.vue-canvas-nest-element {
+  z-index: 0 !important;
+}
+
+.login_card {
+  width: 340px !important;
+  margin: "1rem";
+}
+
+.login_logo {
+  width: 70%;
+}
+
+.ant-form-item-label {
+  line-height: 1.5rem;
+}
+.ant-form-item-required {
+  margin-bottom: 0;
+}
+
+//====== fullpage =====//
+.section_bg {
+  background-image: url('/images/fullpage/section_1.jpg');
+  background-position: 20% 50%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+
+}
+.section_lost {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  transition: all .2s;
+  pointer-events: none;
+  
+  .changePosition-top {
+    animation: moveTop 1s ease-out forwards;
+  }
+  .changePosition-down {
+    animation: moveDown 1s ease-out forwards;
+  }
+  .changePosition-right {
+    animation: moveRight 1s ease-out forwards;
+  }
+  .changePosition-left {
+    animation: moveLeft 1s ease-out forwards;
+  }
+  .changePosition-rotate-start {
+    animation: rotate-start 1s ease-out forwards;
+  }
+
+  .changePosition-rotate-back {
+    animation: rotate-back 1s ease-out forwards;
+  }
+
+
+
+  .inside {
+    width: 100%;
+    height: 100vh;
+    
+  }
+  .novisibility {
+    transition: all .2s;
+    visibility: hidden;
+  }
+}
+.section {
+  background-color: transparent ;
+  transition: all .2s;
+
+  .inner {
+    .title, .description {
+      color: $white;
+    }
+  }
+  .container {
+    overflow: hidden;
+  }
+  &.section1, &.section2 {
+    visibility: inherit;
+  }
+
+  &.section2 {
+    
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;  
+      background-color: $heading-color;
+      opacity: .7;
+
+    }
+
+    .lost_section {
+      border: white 2px solid;
+      padding: 1rem;
+      border-radius: 10px;
+      transition: all .2s;
+      color: white;
+      h4 {
+        color: white;
+      }
+
+      i {
+        color: $orange;
+        font-size: 3rem;
+
+      }
+      &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+        border-color: $orange;
+        background-color: $orange;
+        i {
+          color: white;
+        }
+      }
+
+    }
+
+    .initPositionCard {
+      transform: translateY(100vw);
+    }
+    .changePosition-card-down {
+      animation: card-move-down 1s ease-out forwards;
+    }
+    
+    .changePosition-card-up {
+      animation: card-move-up 1s ease-out forwards;
+    }
+    
+
+  }
+
+  &.section3 {
+    color: white;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;  
+      background-color: $heading-color;
+      opacity: .7;
+
+    }
+    h3 {
+      color: white;
+    }
+
+    .survival_container {
+      margin-left: 8vw;
+      margin-top: 15vw;
+    }
+
+    @media #{$md-layout} {
+      .survival_container {
+        margin-left: 13vw;
+        margin-top: 30vw;
+      }
+    }
+
+    @media #{$sm-layout} {
+      .survival_container {
+        margin-left: 0vw;
+        margin-top: 0vw;
+      }
+    }
+
+    .initPositionCard {
+      transform: translateX(100vw);
+    }
+
+    .changePosition-card-left {
+      animation: card-move-left 1s ease-out forwards;
+    }
+  }
+
+  &.section4 {
+    color: white;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;  
+      background-color: $heading-color;
+      opacity: .7;
+
+    }
+    h3 {
+      color: white;
+    }
+
+    .survival_container {
+      margin-left: 8vw;
+      margin-top: 13vw;
+    }
+
+    .initPositionCard {
+      transform: translateX(0);
+      background-color: transparent;
+    }
+
+    .changePosition-card-right {
+      animation: card-move-right 1s ease-out forwards;
+    }
+
+  }
+
+}
+
+@keyframes card-move-left {
+  from {
+    transform: translateX(100vw);
+  } to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes card-move-right {
+  from {
+    text-align: left;
+    transform: translateX(0);
+  } to {
+    text-align: right;
+    transform: translateX(50%);
+  }
+}
+
+@keyframes card-move-down {
+  from {
+    transform: translateY(100vw);
+  } to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveTop {
+  from {
+    transform-origin: center;
+    transform: rotate(0deg) translateY(0) scale(1);
+
+  } to {
+    transform-origin: center;
+    transform: rotate(360deg) translateY(-10vw) scale(.5);
+  }
+}
+
+@keyframes moveDown {
+  from {
+    transform-origin: center;
+    transform: rotate(360deg) translateY(-10vw) scale(.5);
+  } to {
+    transform-origin: center;
+    transform: rotate(0deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes moveRight {
+  from {
+    transform: translateY(-10vw) translateX(0vw) scale(.5);
+
+  } to {
+    transform: translateY(-10vw) translateX(200%) scale(.5);
+  }
+}
+
+@keyframes moveLeft {
+  from {
+    transform: translateY(-10vw) translateX(200%) scale(.5);
+
+  } to {
+    transform: translateY(-10vw) translateX(0%) scale(.5);
+  }
+}
+
+@keyframes rotate-start {
+  from {
+    transform: rotate(0);
+    opacity: 0;
+  } to {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-back {
+  from {
+    transform: rotate(360deg);
+    opacity: 1;
+  } to {
+    transform: rotate(0);
+    opacity: 0;
+  }
+}
+// ======= homedesign ==========
+h3 {
+  font-weight: 300;
+}
+
+.commercial {
+  text-align: right;
+  overflow: hidden;
+  @media #{$sm-layout} {
+    text-align: left;
+    margin: 1rem;
+
+  }
+
+  .commercial_image {
+    background-image: url('/images/homedesign/half-section-11.jpg');
+    background-size: cover;
+    background-position: 50% 50%;
+    .comercail_container {
+      visibility: hidden;
+    }
+  }
+
+  .comercail_container {
+    margin-top: 6rem;
+    margin: 5rem;
+    width: 60%;
+
+    @media #{$lg-layout} {
+      width: 80%;
+  
+    }
+    @media #{$sm-layout} {
+      width: 100%;
+      margin: 1rem;
+  
+    }
+  }
+
+  .commercial_title {
+    position: relative;
+    margin: 0;
+    padding-right: 4rem;
+    font-weight: 300;
+    @media #{$sm-layout} {
+      padding-right: 0rem;
+      padding-left: 4rem;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 2.5rem;
+      height: 2px;
+      top: 15px;
+      right: 10px;
+      left: auto;
+      background-color: $orange;
+      @media #{$sm-layout} {
+        left: 10px;
+        right: auto;
+      }
+    }
+  }
+  .commercial_discrible {
+    margin-top: 1.5rem;
+  }
+}
+
+.residential {
+  color: white;
+  height: 100vh;
+  background-image: url('/images/homedesign/parallax-image-1.jpg');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-attachment: fixed;
+  h3 {
+    color: white;
+  }
+
+  .residential_container {
+    margin-top: 6rem;
+    margin: 5rem;
+    width: 60%;
+    @media #{$laptop-device} {
+      width: 80%;
+  
+    }
+    @media #{$sm-layout} {
+      width: 100%;
+      margin: 1rem;
+  
+    }
+  }
+}
+
+.about_us {
+  img {
+    overflow: hidden;
+    cursor: pointer;
+    object-fit: cover;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  .img_container {
+    position: relative;
+    overflow: hidden !important;
+  }
+
+  .aboutus_container {
+    padding: 6%;
+    @media #{$lg-layout} {
+      padding: 3%;
+    }
+    @media #{$small-mobile} {
+      margin-top: 25%;
+      margin-bottom: 25%;
+    }
+  }
+
+}
+
+// .map {
+//   width: 100%;
+//   height: 100vh;
+//   position: relative;
+//   &:before {
+//     content: "";
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     background-image: url('/images/homedesign/1920x950_2.jpg') !important;
+//     background-size: cover;
+//     background-position: 50% 50%;
+//     background-attachment: fixed;
+//     filter: brightness(.4);
+//     z-index: 0;
+//   }
+
+//   .map_container {
+//     h2 {
+//     }
+//   }
+
+// }
