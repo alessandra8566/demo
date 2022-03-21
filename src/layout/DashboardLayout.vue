@@ -3,11 +3,11 @@
     <a-layout v-if="!loading">
       <Header />
       <router-view :key="$route.path" />
-      <Footer />
+      <!-- <Footer /> -->
     </a-layout>
-    <a-layout v-else>
+    <!-- <a-layout v-else>
       <Loading />
-    </a-layout>
+    </a-layout> -->
   </div>
 </template>
 

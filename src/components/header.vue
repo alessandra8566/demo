@@ -2,9 +2,10 @@
   <header class="header-area header-style-two header--fixed color-black">
     <div class="header-wrapper">
       <div class="header-left d-flex align-items-center">
-        <div class="logo">
+        <div class="logo flex jcc aic">
           <router-link to="/">
-            <img src="../assets/images/logo/logo-symbol-dark.png" alt="Digital Agency" />
+            <!-- <img src="/images/wistron.png" alt="Digital Agency" class="width100" /> -->
+            <h3 class="mar_0">Wistron</h3>
           </router-link>
         </div>
         <nav class="mainmenunav d-lg-block ml--50">
@@ -12,12 +13,12 @@
             <li>
               <router-link to="/">Home</router-link>
             </li>
-            <li>
+            <!-- <li>
               <router-link to="/fullpage">Full Page</router-link>
             </li>
             <li>
               <router-link to="/homedesign">Home Design</router-link>
-            </li>
+            </li> -->
 
             <!-- <li class="has-droupdown">
               <router-link to="/pages">Pages</router-link>
@@ -100,6 +101,14 @@
 
 <style lang="scss" scoped>
   @import "~@/assets/scss/default/_variables.scss";
+
+  .logo {
+    h3 {
+      // font-size: 2rem;
+      font-weight: bold;
+      color: $white
+    }
+  }
 
   .header-wrapper .mainmenunav ul.mainmenu>li a {
     position: relative;
